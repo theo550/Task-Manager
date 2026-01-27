@@ -13,7 +13,8 @@
   },
   "scripts": {
     "test": "npm test",
-    "lint": "npx eslint ."
+    "lint": "npx eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "repository": {
     "type": "git",

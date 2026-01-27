@@ -12,15 +12,9 @@
     "sourceType": "module"
   },
   "rules": {
+    "no-alert": "off",
     "no-console": "off",
     "no-underscore-dangle": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never"
-      }
-    ],
     "class-methods-use-this": "off"
   }
 }
