@@ -1,0 +1,23 @@
+{
+  "name": "task-manager",
+  "description": "## Installation & usage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theo550/Task-Manager.git"
+  },
+  "author": "Théo Gaudin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theo550/Task-Manager/issues"
+  },
+  "homepage": "https://github.com/theo550/Task-Manager#readme",
+  "dependencies": {
+    "eslint-config-airbnb": "^19.0.4"
+  }
+}
