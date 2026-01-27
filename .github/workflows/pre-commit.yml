@@ -45,6 +45,6 @@ jobs:
           format: 'table'
 
       - name: Run Snyk
-        uses: snyk/actions/node@v3
+        uses: snyk/actions/node
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
