@@ -43,3 +43,8 @@ jobs:
           scan-type: 'fs'
           scan-ref: '.'
           format: 'table'
+
+      - name: Run Snyk
+        uses: snyk/actions/node@v3
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
