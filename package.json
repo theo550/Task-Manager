@@ -10,7 +10,8 @@
     "globals": "^17.1.0"
   },
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "lint": "npx eslint ."
   },
   "repository": {
     "type": "git",
