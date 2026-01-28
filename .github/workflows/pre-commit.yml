@@ -10,6 +10,8 @@ jobs:
   pre-commit:
     name: Run pre-commit
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout repository
@@ -57,6 +59,8 @@ jobs:
   chackov:
     name: Run Checkov
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout repository
