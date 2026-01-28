@@ -53,3 +53,27 @@ jobs:
         uses: snyk/actions/python-3.12@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+  chackov:
+    name: Run Checkov
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install Checkov
+        run: pip install checkov
+
+      - name: Run Checkov scan
+        run: checkov -d . --quiet --compact --output junitxml > checkov-report.xml
+
+      - name: Upload Checkov report
+        uses: actions/upload-artifact@v3
+        with:
+          name: checkov-report
