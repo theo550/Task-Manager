@@ -70,10 +70,5 @@ jobs:
       - name: Install Checkov
         run: pip install checkov
 
-      - name: Run Checkov scan
-        run: checkov -d . --quiet --compact --output junitxml > checkov-report.xml
-
-      - name: Upload Checkov report
+      - name: Test with Checkov
         uses: bridgecrewio/checkov-action@master
-        with:
-          name: checkov-report
