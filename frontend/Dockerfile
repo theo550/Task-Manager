@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginxinc/nginx-unprivileged:alpine3.22-perl
 
 RUN useradd -m appuser
 USER appuser
