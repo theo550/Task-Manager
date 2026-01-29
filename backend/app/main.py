@@ -18,7 +18,10 @@ app = FastAPI(title="Task Manager API", version="1.0.0")
 # Allow local frontend (file:// or http://localhost) during training
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # tighten later for “good practices”
+    allow_origins=[
+        "http://localhost:8080",
+        "http://127.0.0.1:8080",
+    ],  # tighten later for “good practices”
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
