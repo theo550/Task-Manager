@@ -1,0 +1,45 @@
+name: Deploy MkDocs to GitHub Pages
+
+on:
+  push:
+    branches: ["**"]
+
+permissions:
+  contents: read
+  id-token: write
+  pages: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+
+      - name: Install mkdocs
+        run: pip install mkdocs
+
+      - name: Build documentation
+        run: mkdocs build -d site
+
+      - name: Setup pages
+        uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site/
+
+      - name: Deploy it to serve it as static file
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      # Echo the url in order to retrieve the artifact
+      - run: echo ${{ steps.deployment.outputs.page_url }}
