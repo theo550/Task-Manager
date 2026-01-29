@@ -23,7 +23,7 @@ jobs:
         run: pip install mkdocs
 
       - name: Build documentation
-        run: mkdocs build --config-file ./docs/mkdocs.yml -d site
+        run: mkdocs build -d site
 
       - name: Setup pages
         uses: actions/configure-pages@v5
