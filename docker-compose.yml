@@ -1,0 +1,19 @@
+services:
+  backend:
+    image: theo550/backend:latest
+    container_name: backend
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - backend-data:/backend
+
+  frontend:
+    image: theo550/frontend:latest
+    container_name: frontend
+    restart: always
+    ports:
+      - "8080:8080"
+
+volumes:
+  backend-data:
