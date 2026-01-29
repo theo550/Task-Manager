@@ -23,12 +23,18 @@ jobs:
         run: pip install mkdocs
 
       - name: Build documentation
-        run: mkdocs build --config-file ./docs/mkdocs.yml
+        run: mkdocs build --config-file ./docs/mkdocs.yml -d site
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Setup pages
+        uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
         with:
-          path: site
+          path: site/
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy it to serve it as static file
+        id: deployment
         uses: actions/deploy-pages@v4
+
+      # Echo the url in order to retrieve the artifact
+      - run: echo ${{ steps.deployment.outputs.page_url }}
