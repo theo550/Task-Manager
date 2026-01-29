@@ -2,6 +2,7 @@ services:
   backend:
     image: theo550/backend:latest
     container_name: backend
+    build: ./backend
     restart: always
     ports:
       - "8000:8000"
@@ -11,6 +12,7 @@ services:
   frontend:
     image: theo550/frontend:latest
     container_name: frontend
+    build: ./frontend
     restart: always
     ports:
       - "8080:8080"
